@@ -22,6 +22,10 @@
         <activity android:name=".rxbasic.RxBasicActivity" />
 
         <activity android:name=".rxPollingDemo.RxPollingActivity" />
+
+        <activity android:name=".rxOperator.RxOperatorActivity" />
+        <activity android:name=".rxNestingReqest.RxNestingRequstActivity" />
+        <activity android:name=".rxNestingReqest.RxRetryActivity" />
     </application>
 
 </manifest>

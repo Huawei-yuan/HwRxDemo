@@ -5,6 +5,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.yhw.hwrxdemo.rxNestingReqest.RxNestingRequstActivity;
+import com.yhw.hwrxdemo.rxNestingReqest.RxRetryActivity;
+import com.yhw.hwrxdemo.rxOperator.RxOperatorActivity;
 import com.yhw.hwrxdemo.rxPollingDemo.RxPollingActivity;
 import com.yhw.hwrxdemo.rxbasic.RxBasicActivity;
 
@@ -22,6 +25,18 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.rx_polling_btn).setOnClickListener(v -> {
             startActivity(new Intent(this, RxPollingActivity.class));
+        });
+
+        findViewById(R.id.rx_operator_btn).setOnClickListener(v -> {
+            startActivity(new Intent(this, RxOperatorActivity.class));
+        });
+
+        findViewById(R.id.rx_nesting_request_btn).setOnClickListener(v -> {
+            startActivity(new Intent(this, RxNestingRequstActivity.class));
+        });
+
+        findViewById(R.id.rx_retry_request_btn).setOnClickListener(v -> {
+            startActivity(new Intent(this, RxRetryActivity.class));
         });
     }
 

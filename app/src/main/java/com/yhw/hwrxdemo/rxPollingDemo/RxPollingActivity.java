@@ -7,12 +7,13 @@ import android.util.Log;
 
 import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
 import com.yhw.hwrxdemo.R;
+import com.yhw.hwrxdemo.rxNestingReqest.INewTranlation;
+import com.yhw.hwrxdemo.rxNestingReqest.NewTranlationBean;
 
 import java.util.concurrent.TimeUnit;
 
 import io.reactivex.Observable;
 import io.reactivex.Observer;
-import io.reactivex.Scheduler;
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.functions.Consumer;
@@ -53,28 +54,27 @@ public class RxPollingActivity extends AppCompatActivity {
                          **/
                         // a. 创建Retrofit对象
                         Retrofit retrofit = new Retrofit.Builder()
-                                .baseUrl("http://fy.iciba.com/") // 设置 网络请求 Url
+                                .baseUrl("http://fanyi.youdao.com/") // 设置 网络请求 Url
                                 .addConverterFactory(GsonConverterFactory.create()) //设置使用Gson解析(记得加入依赖)
                                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create()) //支持RxJava
                                 .build();
                         // b. 创建 网络请求接口 的实例
-                        GetRequest_Interface request = retrofit.create(GetRequest_Interface.class);
+                        INewTranlation request = retrofit.create(INewTranlation.class);
                         // c. 采用Observable<...>形式 对 网络请求 进行封装
-                        Observable<Translation> observable = request.getCall();
+                        Observable<NewTranlationBean> observable = request.tranlate1();
                         // d. 通过线程切换发送网络请求
                         observable.subscribeOn(Schedulers.io()) //// 切换到IO线程进行网络请求
                                 .observeOn(AndroidSchedulers.mainThread()) // 切换回到主线程 处理请求结果
-                                .subscribe(new Observer<Translation>() {
+                                .subscribe(new Observer<NewTranlationBean>() {
                                     @Override
                                     public void onSubscribe(Disposable d) {
                                         Log.i(TAG, "request onSubscribe");
                                     }
 
                                     @Override
-                                    public void onNext(Translation result) {
+                                    public void onNext(NewTranlationBean result) {
                                         // e.接收服务器返回的数据
                                         Log.i(TAG, "request onNext result = " + result);
-                                        result.show() ;
                                     }
 
                                     @Override

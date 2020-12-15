@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.yhw.hwrxdemo.rxNestingReqest.RxNestingRequstActivity;
 import com.yhw.hwrxdemo.rxNestingReqest.RxRetryActivity;
+import com.yhw.hwrxdemo.rxOperator.RxFilterActivity;
 import com.yhw.hwrxdemo.rxOperator.RxOperatorActivity;
 import com.yhw.hwrxdemo.rxPollingDemo.RxPollingActivity;
 import com.yhw.hwrxdemo.rxbasic.RxBasicActivity;
@@ -37,6 +38,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.rx_retry_request_btn).setOnClickListener(v -> {
             startActivity(new Intent(this, RxRetryActivity.class));
+        });
+
+        findViewById(R.id.rx_filter_btn).setOnClickListener(v -> {
+            startActivity(new Intent(this, RxFilterActivity.class));
         });
     }
 

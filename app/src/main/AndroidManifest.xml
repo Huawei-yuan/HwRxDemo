@@ -26,6 +26,7 @@
         <activity android:name=".rxOperator.RxOperatorActivity" />
         <activity android:name=".rxNestingReqest.RxNestingRequstActivity" />
         <activity android:name=".rxNestingReqest.RxRetryActivity" />
+        <activity android:name=".rxOperator.RxFilterActivity" />
     </application>
 
 </manifest>

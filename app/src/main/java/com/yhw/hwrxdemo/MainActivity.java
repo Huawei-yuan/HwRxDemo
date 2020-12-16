@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import com.yhw.hwrxdemo.fxFollowable.RxFollowableActivity;
 import com.yhw.hwrxdemo.rxNestingReqest.RxNestingRequstActivity;
 import com.yhw.hwrxdemo.rxNestingReqest.RxRetryActivity;
 import com.yhw.hwrxdemo.rxOperator.RxFilterActivity;
@@ -42,6 +43,10 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.rx_filter_btn).setOnClickListener(v -> {
             startActivity(new Intent(this, RxFilterActivity.class));
+        });
+
+        findViewById(R.id.rx_followable_btn).setOnClickListener(v -> {
+            startActivity(new Intent(this, RxFollowableActivity.class));
         });
     }
 

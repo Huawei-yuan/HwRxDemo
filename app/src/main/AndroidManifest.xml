@@ -2,7 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yhw.hwrxdemo">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".rxPollingDemo.RxPollingActivity"></activity>
+        <activity android:name=".fxFollowable.RxFollowableActivity"></activity>
+        <activity android:name=".rxPollingDemo.RxPollingActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,9 +21,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".rxbasic.RxBasicActivity" />
-
         <activity android:name=".rxPollingDemo.RxPollingActivity" />
-
         <activity android:name=".rxOperator.RxOperatorActivity" />
         <activity android:name=".rxNestingReqest.RxNestingRequstActivity" />
         <activity android:name=".rxNestingReqest.RxRetryActivity" />
